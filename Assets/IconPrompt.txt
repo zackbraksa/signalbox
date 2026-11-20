@@ -1,0 +1,5 @@
+Generated with the built-in image generation tool.
+
+Final prompt: see PorcelainGlassIcon.prompt.txt.
+
+PorcelainGlassIcon.png is the canonical opaque full-bleed master. script/render_icon.swift creates the classic inset macOS AppIcon.png and full-bleed Assets/Signalbox.icon/Assets/Default.png. Default.png preserves the exact approved master; Foreground.png supplies transparent artwork for dark and tinted appearances. AdaptiveIcon.prompt.txt records the foreground extraction prompt. The renderer syncs Default.png only and preserves the foreground and appearance configuration. Icon Composer applies the native platform mask; default and dark keep the baked glass finish, while tinted appearances use system glass without extra specular or shadow effects.
