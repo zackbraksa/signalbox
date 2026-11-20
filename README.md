@@ -13,7 +13,7 @@ Signalbox adds a color-only menu bar warning when CPU load, memory pressure, sta
 The details view shows a two-minute CPU history and the five apps or services using the most CPU or memory. Helpers are grouped under their parent app. Monitoring runs locally. On compatible Macs, Apple Intelligence can suggest labels for unfamiliar processes on-device.
 
 <p align="center">
-  <img src="Assets/Screenshot.jpg" alt="Signalbox over a blue macOS wallpaper, showing memory pressure, CPU history, and apps ranked by memory use" width="800">
+  <img src="Assets/Screenshot.jpg" alt="Signalbox open beneath its amber memory pressure warning in the macOS menu bar" width="557">
 </p>
 
 ## Install
