@@ -4,7 +4,7 @@
 <h1 align="center">Signalbox</h1>
 <p align="center"><strong>A quiet system monitor for your Mac.</strong></p>
 <p align="center">
-  <a href="https://github.com/zackbraksa/signalbox/releases/download/v1.0.0/Signalbox-1.0.0-macOS.zip">Download Signalbox</a>
+  <a href="https://github.com/zackbraksa/signalbox/releases/download/v1.0.1/Signalbox-1.0.1-macOS.dmg">Download Signalbox</a>
 </p>
 <p align="center">macOS 14 or later · Apple silicon and Intel</p>
 
@@ -18,7 +18,9 @@ The details view shows a two-minute CPU history and the five apps or services us
 
 ## Install
 
-Unzip the download and drag Signalbox to Applications. View release notes on [Releases](https://github.com/zackbraksa/signalbox/releases).
+Open the disk image and drag Signalbox to Applications. View release notes on [Releases](https://github.com/zackbraksa/signalbox/releases).
+
+Choose **Check for Updates…** in the monitor to check for new releases. Reopen Signalbox from Applications when its menu bar indicator is hidden.
 
 ## Build from source
 

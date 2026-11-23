@@ -44,15 +44,17 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <key>LSMinimumSystemVersion</key><string>14.0</string>
 <key>NSPrincipalClass</key><string>NSApplication</string>
 <key>LSUIElement</key><true/>
+<key>SparkleUpdatesEnabled</key><false/>
 </dict></plist>
 PLIST
+python3 "$PWD/script/macos-sparkle.py" embed "$APP" "$PWD/.build"
 signing_identity="${SIGNALBOX_SIGNING_IDENTITY:--}"
 signing_options=()
 if [[ "$MODE" == --release && "$signing_identity" != - ]]; then
   signing_options=(--options runtime --timestamp)
 fi
 codesign --force "${signing_options[@]+"${signing_options[@]}"}" --sign "$signing_identity" "$APP"
-codesign --verify --strict "$APP"
+codesign --verify --deep --strict "$APP"
 case "$MODE" in
   --build|--release) ;;
   --debug) lldb -- "$APP/Contents/MacOS/Signalbox" ;;

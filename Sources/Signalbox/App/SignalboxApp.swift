@@ -13,6 +13,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate, NSW
     private var item: NSStatusItem!
     private let popover = NSPopover()
     private let store = MonitorStore()
+    private let updater = AppUpdater()
     private var detailsWindow: NSWindow?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -23,7 +24,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate, NSW
         item.button?.action = #selector(toggle)
         popover.behavior = .transient
         popover.delegate = self
-        popover.contentViewController = NSHostingController(rootView: MonitorView(store: store))
+        popover.contentViewController = NSHostingController(rootView: MonitorView(store: store, updater: updater))
         store.didUpdate = { [weak self] in self?.updateIndicator() }
         updateIndicator()
         store.start()
@@ -43,7 +44,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate, NSW
     }
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if detailsWindow == nil {
-            let window = NSWindow(contentViewController: NSHostingController(rootView: MonitorView(store: store)))
+            let window = NSWindow(contentViewController: NSHostingController(rootView: MonitorView(store: store, updater: updater)))
             window.title = "Signalbox"
             window.styleMask = [.titled, .closable]
             window.isReleasedWhenClosed = false

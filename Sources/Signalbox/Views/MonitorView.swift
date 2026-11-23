@@ -5,6 +5,7 @@ import SignalboxCore
 
 struct MonitorView: View {
     let store: MonitorStore
+    @ObservedObject var updater: AppUpdater
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack {
@@ -24,6 +25,10 @@ struct MonitorView: View {
             Divider()
             ConsumersView(consumers: store.consumers, labels: store.processLabels, labelStatus: store.labelStatus)
             Divider()
+            if updater.isAvailable {
+                Button("Check for Updates…", action: updater.checkForUpdates)
+                    .disabled(!updater.canCheckForUpdates)
+            }
             HStack {
                 Text("Green normal · Amber warning · Red critical\nGray means unavailable. Labels cached locally.")
                     .font(.caption2).foregroundStyle(.secondary)

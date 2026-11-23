@@ -1,0 +1,9 @@
+{
+  "bundleIdentifier": "xyz.braksa.apps.signalbox",
+  "teamIdentifier": "HQVGN3GH6Z",
+  "version": "1.0.1",
+  "build": 9,
+  "feedURL": "https://signalbox.braksa.xyz/updates/appcast.xml",
+  "sparkleKeychainAccount": "xyz.braksa.signalbox",
+  "sparklePublicKey": "IUAQckXNbIBQaonYnc8aad01tPM5cjXsr8HRacvZ2Zw="
+}
